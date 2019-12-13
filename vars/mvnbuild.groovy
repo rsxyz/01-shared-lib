@@ -4,7 +4,11 @@ def call(body) {
     body.delegate = config
     body()
    node {
-        git credentialsId: 'github', url: 'https://github.com/rsxyz/HelloJava.git'
-        sh "mvn clean install"
+        stage('checkout'){
+           git credentialsId: 'github', url: 'https://github.com/rsxyz/HelloJava.git'
+        }
+        stage('build'){
+           sh "mvn clean install"
+        }
     }
 }
