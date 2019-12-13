@@ -5,6 +5,6 @@ def call(body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
-    def pipeline = new MavenPipelinea()
+    def pipeline = new MavenPipeline()
     pipeline.startPipeline(config)
 }
