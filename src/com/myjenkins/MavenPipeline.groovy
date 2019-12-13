@@ -20,6 +20,7 @@ def startPipeline(config){
             rtMaven.tool = 'M2'
             rtMaven.deployer releaseRepo:'maven-dev', snapshotRepo:'maven-dev', server: server
             rtMaven.resolver releaseRepo:'maven-dev', snapshotRepo:'maven-dev', server: server
+            buildInfo.env.capture = true
             rtMaven.run pom: 'pom.xml', goals: 'clean install -Dmaven.test.skip=true', buildInfo: buildInfo
             publishBuildInfo server: server, buildInfo: buildInfo
         }
