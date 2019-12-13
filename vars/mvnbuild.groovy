@@ -4,9 +4,7 @@ def call(body) {
     body.delegate = config
     body()
     pipeline{
-        agent { 
-            any
-        }
+        agent any
         tools {
           jdk 'JDK8'
           maven 'M2'
