@@ -10,5 +10,8 @@ def call(body) {
         stage('build'){
            sh "mvn clean install"
         }
+        stage('sonar'){
+          sh "mvn sonar:sonar -sonar.host.url=http://192.168.1.15:9000"
+       }
     }
 }
