@@ -11,7 +11,7 @@ def startPipeline(config){
            sh "mvn clean install"
         }
         stage('sonar'){
-          sh "mvn sonar:sonar  -Dsonar.host.url=config.SONAR_URL"
+          sh "mvn sonar:sonar  -Dsonar.host.url=${config.SONAR_URL}"
        }
    }
 }
