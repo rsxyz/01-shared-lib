@@ -5,7 +5,7 @@ def call(body) {
     body()
    node {
         stage('checkout'){
-           git credentialsId: 'github', url: 'https://github.com/rsxyz/HelloJava.git'
+           git credentialsId: 'github', url: config.url
         }
         stage('build'){
            sh "mvn clean install"
